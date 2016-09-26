@@ -39,10 +39,10 @@ x	(4) Display an error message (but don't abort) if file does not exist
 	(10) Store the rules in a suitable data structure
 	(5) Abort with appropriate message if loading the rules fails (must use exceptions)
 Processing the orders
-	(4) Prompt the user and accept a product
+x	(4) Prompt the user and accept a product
 	(4) Display error message if product not defined (i.e., if no rules were loaded for that product). Program does not abort (like giraffe example in figure 2).
 	(15) If product is defined, display the associated actions
-	(3) Loop ends when sentinel value (e.g., d or D) is entered
+x	(3) Loop ends when sentinel value (e.g., d or D) is entered
 Unit tests
 	(5) Include a test for loading a simple set of rules
 	(3) Include a test for loading rules with a bad action
