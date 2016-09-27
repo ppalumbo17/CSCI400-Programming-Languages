@@ -9,7 +9,6 @@ require 'singleton'
 class SkiStore
 
 	attr_accessor :current_product, :products
-
 	include Singleton
 
 	def initialize
@@ -74,17 +73,29 @@ class SkiStore
 			puts "loading #{filename} ..."
 			load filename 
 			puts ''
+		
+		# Give an error if the filename is invalid
 		rescue LoadError => ex
 			puts "Invalid filename: #{ex}"
+		
+		# Give an error if there is not a defined method in the file
+		rescue NoMethodError => ex
+			puts "Action in file not defined: #{ex} "
+
+			#Empty out the products
+			@products = Hash.new
+
+			puts ''
 		end
 
 		#TODO
 		# here put another rescue for an improper file
 
 		# testing / ease of grading - print out all the products
-		puts "(testing) Products :::"
+		puts ":::::::::Products:::::::::"
 		@products.each do |key, values|
-			print "#{key}: "
+			puts "#{key}:"
+			print "     "
 			values.each do |value|
 				print "#{value}, "
 			end
@@ -113,8 +124,8 @@ class SkiStore
 				if(SkiStore.instance.products.keys.include? product_choice)
 					@products.fetch(product_choice).each{|action| puts "---- #{action}"}
 				else
-					#TODO this throw error
-					puts "TODO THIS NEEDS TO THROW AN ERROR I THINK"
+					# The assignment says to just 'display an error'
+					# so I didn't display an error here
 					puts "Error: Product not defined"
 				end
 

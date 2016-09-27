@@ -1,47 +1,28 @@
-book
-	packing slip - shipping
-	packing slip - royalty
-ski pass
-	email - purchaser
-	notify - ski resort
-book
-	pay - commission
-ski video
-	packing slip - shipping
-	product - video
-discount club membership
-	activate - membership
-	email - purchaser
-ski boots
-	certificate - discount boot fitting
-ski helmer
-	warranty 
-
 
 
 Rules files
-	(2) Create at least two "valid" files (e.g., I have JustDoIt and MtnLover in my example execution)
-	(1) Rules files should includes all rules listed at the top of the assignment (may have some in one file, some in the other... and some additional rules, for example like the two membership rules in figure 2)
-	(1) Create a file with a bad action. Name this file badRules.txt.
+x	(2) Create at least two "valid" files (e.g., I have JustDoIt and MtnLover in my example execution)
+x	(1) Rules files should includes all rules listed at the top of the assignment (may have some in one file, some in the other... and some additional rules, for example like the two membership rules in figure 2)
+x	(1) Create a file with a bad action. Name this file badRules.txt.
 	You may want to create another rules file for your unit tests. I created a file named simpleRules.txt with only a few products, to simplify testing.
 Defining the rules
-	(2) Define at least six types of products (include all products from the example at the top of this assignment, plus others as you desire)
-	(4) Include actions with and without parameters
-	(4) Be able to add rules to a product (like book example)
+x	(2) Define at least six types of products (include all products from the example at the top of this assignment, plus others as you desire)
+x	(4) Include actions with and without parameters
+x	(4) Be able to add rules to a product (like book example)
 Main Menu
 x	(2) Displays options
-x/	(2) Ensures valid option is entered // doesn't error handling
+x	(2) Ensures valid option is entered 
 x	(2) Calls appropriate method or exits program
 Loading the rules
 x	(5) Prompt the user for the filename. Add a .txt extension if needed.
 x	(4) Display an error message (but don't abort) if file does not exist
-	(5) Define the methods needed to load the business rules file (similar to questionsv1.rb)
-	(10) Store the rules in a suitable data structure
-	(5) Abort with appropriate message if loading the rules fails (must use exceptions)
+x	(5) Define the methods needed to load the business rules file (similar to questionsv1.rb)
+x	(10) Store the rules in a suitable data structure
+x	(5) Abort with appropriate message if loading the rules fails (must use exceptions)
 Processing the orders
 x	(4) Prompt the user and accept a product
-	(4) Display error message if product not defined (i.e., if no rules were loaded for that product). Program does not abort (like giraffe example in figure 2).
-	(15) If product is defined, display the associated actions
+x	(4) Display error message if product not defined (i.e., if no rules were loaded for that product). Program does not abort (like giraffe example in figure 2).
+x	(15) If product is defined, display the associated actions
 x	(3) Loop ends when sentinel value (e.g., d or D) is entered
 Unit tests
 	(5) Include a test for loading a simple set of rules

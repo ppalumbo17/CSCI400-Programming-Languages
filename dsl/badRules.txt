@@ -1,0 +1,27 @@
+product 'book'
+packing_slip 'shipping'
+packing_slip 'royalty'
+
+product 'ski_pass'
+email 'purchaser'
+notify 'ski resort'
+
+product 'book'
+pay 'comission'
+
+product 'ski_video'
+WOOP WOOP WOOP WOOP 'comission'
+
+product 'ski_video'
+packing_slip 'shipping'
+includes 'free first aid video'
+
+product 'membership'
+activate_membership
+email 'purchaser'
+
+product 'ski_boots'
+includes 'boot fitting discount certificate'
+
+product 'ski_helmet'
+warranty_card
