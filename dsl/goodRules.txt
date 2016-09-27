@@ -1,18 +1,5 @@
-product 'book'
-packing_slip 'shipping'
-packing_slip 'royalty'
-
-product 'ski_pass'
-email 'purchaser'
-notify 'ski resort'
-
-product 'book'
-pay 'comission'
-
 product 'ski_video'
 pay 'comission'
-
-product 'ski_video'
 packing_slip 'shipping'
 includes 'free first aid video'
 
@@ -25,3 +12,12 @@ includes 'boot fitting discount certificate'
 
 product 'ski_helmet'
 warranty_card
+
+product 'snow_bike'
+warranty_card
+email 'purchaser'
+
+product 'person_tries_to_rob_the_store'
+call_number '9-11'
+notify_law_authorities
+chase_out_of_store 'robber'

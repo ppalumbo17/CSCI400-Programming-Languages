@@ -70,9 +70,8 @@ class SkiStore
 		
 		filename += '.txt'
 
-		puts "loading #{filename} ..."
-
 		begin
+			puts "loading #{filename} ..."
 			load filename 
 			puts ''
 		rescue LoadError => ex
@@ -80,11 +79,17 @@ class SkiStore
 		end
 
 		#TODO
-		# here put another rescure for an improper file
+		# here put another rescue for an improper file
 
-		# testing
-		puts "products"
-		puts @products
+		# testing / ease of grading - print out all the products
+		puts "(testing) Products :::"
+		@products.each do |key, values|
+			print "#{key}: "
+			values.each do |value|
+				print "#{value}, "
+			end
+			puts ''
+		end
 
 	end
 
@@ -94,10 +99,6 @@ class SkiStore
 
 		puts ''
 		still_processing = true
-
-		# testing
-		puts "products"
-		puts @products
 
 		while still_processing
 			puts "Enter product type or 'D' (done) to end:"
@@ -123,21 +124,54 @@ class SkiStore
 	end
 end
 
-
 def product(text)
 	temp = text.chomp
 	if !SkiStore.instance.products.keys.include? temp	#check if duplicate
 		SkiStore.instance.add_product(temp)
 	end
 	SkiStore.instance.current_product = temp
-
-	# TESTING DELETEME
-	puts 'pause product in product'
-	puts @products
-	ind = gets
 end
-
 
 def email (input)
 	SkiStore.instance.add_action("email #{input}")
+end
+
+def notify (input)
+	SkiStore.instance.add_action("notify #{input}")
+end
+
+def packing_slip (input)
+	SkiStore.instance.add_action("packing slip to #{input}")
+end
+
+def pay (input)
+	SkiStore.instance.add_action("pay #{input}")
+end
+
+def includes (input) # Can't name a function in ruby include
+	SkiStore.instance.add_action("include #{input}")
+end
+
+# No arguments
+
+def activate_membership
+	SkiStore.instance.add_action("activate membership")
+end
+
+def warranty_card
+	SkiStore.instance.add_action("warranty card")
+end
+
+# For fun
+
+def notify_law_authorities
+	SkiStore.instance.add_action("notify law authorities")
+end
+
+def call_number (input)
+	SkiStore.instance.add_action("call #{input}")
+end
+
+def chase_out_of_store (input)
+	SkiStore.instance.add_action("chase #{input} out of store")
 end
