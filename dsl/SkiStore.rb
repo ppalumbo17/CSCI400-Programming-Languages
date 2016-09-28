@@ -34,7 +34,10 @@ class SkiStore
 			case option
 				when '1'
 					puts ''
-					load_rules
+					# First load the file itself and check if it is valid
+					puts 'Enter filename containing rules: '
+					filename = $stdin.gets.chomp
+					load_rules(filename)
 					puts ''
 				when '2' 
 					process_orders
@@ -56,11 +59,11 @@ class SkiStore
 		return $stdin.gets.chomp.downcase
 	end
 
-	def load_rules 
+	def load_rules(filename) 
 
-		# First load the file itself and check if it is valid
-		puts 'Enter filename containing rules: '
-		filename = $stdin.gets.chomp
+		# # First load the file itself and check if it is valid
+		# puts 'Enter filename containing rules: '
+		# filename = $stdin.gets.chomp
 
 		# Chompt off the .txt if it's there, and then slap it right back
 		unless filename.index(".txt").nil?
@@ -81,7 +84,7 @@ class SkiStore
 		# Give an error if there is not a defined method in the file
 		rescue NoMethodError => ex
 			puts "Action in file not defined: #{ex} "
-
+			raise ArgumentError
 			#Empty out the products
 			@products = Hash.new
 
